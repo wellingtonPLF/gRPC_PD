@@ -1,0 +1,13 @@
+package  <groupID>.services;
+
+public class UsuarioService extends UsuarioProtoImplBase{
+	
+	public void usuarioPorId (UserIdRequest idRequest, StreamObserver<UserResponse> userResponse) {
+		Integer id = idRequest.getId();
+		UserResponse.Builder reply = UserResponse.newBuilder();
+		Usuario user = Usuario.newBuilder().setId(id).setNome("Meu-Nome").build();
+		reply.setUser(user);
+		userResponse.onNext(reply.build());
+		userResponse.onCompleted();
+	}
+}

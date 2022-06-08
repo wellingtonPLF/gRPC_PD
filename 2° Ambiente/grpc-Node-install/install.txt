@@ -1,0 +1,61 @@
+==============================================================================================
+#######################################################
+ >> Entre no VScode, "Leia todos os Comentarios!" <<
+#######################################################
+==============================================================================================
+//Vá terminal e aplique os comandos abaixo:
+
+mkdir gRPC_Node-Project
+cd gRPC_Node-Project
+npm init -y
+npm add -D @grpc/grpc-js @grpc/proto-loader
+npm i typescript @types/node ts-node-dev -D
+npx tsc --init
+==============================================================================================
+//Crie a estrutura abaixo:
+//Exemplo: usuarioProto.proto, Coloque o nome do arquivo proto que será criado;
+  > src			           //Pasta src
+      - client.ts		   //Cliente application
+      - server.ts		   //Server application
+
+      > proto		           //Pasta proto dentro do src
+      	 - <name_Proto>.proto      //Exemplo: usuario.proto, Coloque o nome do arquivo proto que será criado;
+				   //Deve ser a mesma estrutura! Tanto no gRPC_JAVA quanto no gRPC_Node;
+
+      > model			   //Pasta Model dentro do src
+	 - <Name_Model>.ts	   //Exemplo: Usuario.ts,   Coloque o nome da entity que vc irá criar no arquivo .proto;
+      > services		   //Pasta Services dentro do src
+	 - <Name>Service.ts	   //Exemplo: UsuarioService; Coloque o nome do service que vc irá criar no arquivo .proto;
+
+==============================================================================================
+
+//Adicione dentro do root do projeto o file Bash ou Batch (dependendo se for linux ou windows), 
+que se encontra dentro da pasta: "bashBatch".
+
+==============================================================================================
+//Em tsconfig.json, coloque: 
+{
+  target: "es2020"
+}
+
+//Habilite o rootDir colocando: 
+{
+  rootDir: "./src"
+}
+
+==============================================================================================
+//Adicione em script no package.json o seguinte:
+
+"dev-client": "ts-node src/client.ts",
+"dev-server": "ts-node src/server.ts",
+"proto-gen": "yarn proto-loader-gen-types --grpcLib=@grpc/grpc-js  --outDir=src/protoBuf/ src/proto/%npm_config_protoFile%.proto",
+
+//Se estiver utilizando o linux
+"proto-genAllLinux": "proto-gen.sh",
+
+//Se estiver utilizando o windows
+"proto-genAllWindows": "proto-gen.bat",
+
+==============================================================================================
+//Lembre-se seu serviço tem que ser baseado no arquivo .proto que vc criou;
+==============================================================================================

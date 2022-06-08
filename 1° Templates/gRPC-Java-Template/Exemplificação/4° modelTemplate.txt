@@ -1,0 +1,23 @@
+package <gorupId>.model;
+
+public class <NomdeDoModel> {
+	private <TipoDoAtributo> <nomeDoAtributo>;
+	
+	//Constructor
+	public <NomdeDoModel> () {
+		
+	}
+
+	//Constructor
+	public <NomdeDoModel> (<TipoDoAtributo> <nomeDoAtributo>) {
+		super();
+		this.<nomeDoAtributo> = <nomeDoAtributo>;
+	}
+	
+	public <TipoDoAtributo> get<nomeDoAtributo>() {
+		return <nomeDoAtributo>;
+	}
+	public void set<nomeDoAtributo>(<TipoDoAtributo> <nomeDoAtributo>) {
+		this.<nomeDoAtributo> = <nomeDoAtributo>;
+	}
+}

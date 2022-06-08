@@ -1,0 +1,13 @@
+package <groupId>.services;
+
+public class MyService <NomeDoServiceColocadoNoFile.Proto>ImplBase{
+	
+	public void <NomeDoMethodo>(<proto_X>Request <nome>Request, StreamObserver<<proto_Z>Response> <proto_Z>Response) {
+		<Type> <atribute> = <nome>Request.get<Atribute>();
+		<proto_Z>Response.Builder reply = <proto_Z>Response.newBuilder();
+		<PROTO_Z> <proto_Z> = <PROTO_Z>.newBuilder().set<Atribute>(<value>).set<Atribute>(<value>).build();
+		reply.set<Atribute>(<proto_Z>);
+		<proto_Z>Response.onNext(reply.build());
+		<proto_Z>Response.onCompleted();
+	}
+}

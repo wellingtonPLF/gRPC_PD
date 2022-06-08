@@ -1,0 +1,71 @@
+package <gorupId>;
+
+import io.grpc.Channel;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Status;
+import java.util.concurrent.TimeUnit;
+import io.grpc.StatusRuntimeException;
+import io.grpc.stub.StreamObserver;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class ApplicationClient {
+  private static final Logger logger = Logger.getLogger(ApplicationClient.class.getName());
+
+  private final <NomeDoServiceColocadoNoFile.Proto>Grpc.<ServiceDo.Proto>BlockingStub blockingStub;
+
+  /** Construct client for accessing RouteGuide server using the existing channel. */
+  public ApplicationClient(Channel channel) {
+    blockingStub = <NomeDoServiceColocadoNoFile.Proto>Grpc.newBlockingStub(channel);
+  }
+
+  /**
+   * Blocking unary call example.  Calls getHello and prints the response.
+   */
+  public void getMethod(String first, String second) {
+    info("*** Method: {0} {1}", first, second);
+    // proto_x e _y é o nome do message lá do proto
+    <proto_X>Request <name>Request = <proto_X>Request.newBuilder().setNomeDoAtributo(valor a ser setado).build();
+    <proto_Z>Response <name>Response = null;
+    try {
+      <name>Response = blockingStub.<Methodo>();
+      info("Result: " + <proto_Z>Response.<getAtributoDoMessageResponseLáNo.Proto>());
+    } catch (StatusRuntimeException e) {
+      warning("RPC failed: {0}", e.getStatus());
+    }
+  }
+
+  /** Issues several different requests and then exits. */
+  public static void main(String[] args) throws InterruptedException {
+    String target = "localhost:3335";
+    if (args.length > 0) {
+      if ("--help".equals(args[0])) {
+        System.err.println("Usage: [target]");
+        System.err.println("");
+        System.err.println("  target  The server to connect to. Defaults to " + target);
+        System.exit(1);
+      }
+      target = args[0];
+    }
+
+    ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
+    try {
+      ApplicationClient client = new ApplicationClient(channel);
+      // Looking for a valid feature
+      client.getMethod("Is", "running...");
+
+    } finally {
+      channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+    }
+  }
+
+  private void info(String msg, Object... params) {
+    logger.log(Level.INFO, msg, params);
+  }
+
+  private void warning(String msg, Object... params) {
+    logger.log(Level.WARNING, msg, params);
+  }
+}

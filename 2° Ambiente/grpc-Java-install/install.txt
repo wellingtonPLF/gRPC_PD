@@ -1,0 +1,47 @@
+----------------------------------------------------------------------------------------------------
+########################
+  Leia os Comentarios!
+########################
+----------------------------------------------------------------------------------------------------
+1.Crie um Maven project;
+----------------------------------------------------------------------------------------------------
+2.Aplique a estrutura abaixo:
+
+//Use o group Id que você utilizou para criar o projeto
+
+src/main/java
+   <groupId>			//Default Package
+	ApplicationClient.java  //Client Aplication
+	ApplicationServer.java	//Server Aplication
+   <groupId>.services		//Service Package 
+        <Name>Service.java	//Exemplo: UsuarioService; Coloque o nome do service que vc irá criar no arquivo .proto;
+   <groupId>.model		//Model Package 
+        <Name_Model>.java	//Exemplo: Usuario; Coloque o nome da entity que vc irá criar no arquivo .proto;
+
+
+//Exemplo: usuario.proto, Coloque o nome do arquivo proto que será criado;
+
+src/main/resources
+   protos			//Pasta Protos
+	<name_Proto>.proto	//Arquivo Proto, deve ser a mesma estrutura! Tanto no gRPC_JAVA quanto no gRPC_Node;
+----------------------------------------------------------------------------------------------------
+3.Adicione ao seu pom.xml todo o conteúdo existente no arquivo pomXML-Template.txt;
+
+  >>> Espere as dependencias serem baixadas antes de continuar os proximos passos! <<<
+----------------------------------------------------------------------------------------------------
+4.Clique com o botão direito do mouse no projeto -> Vá em Maven -> Update Project
+----------------------------------------------------------------------------------------------------
+5.Clique com o botão direito do mouse no projeto -> Close project
+---------------------------------------------------------------------------------------------------
+6.Clique com o botão direito do mouse no projeto -> Open project
+----------------------------------------------------------------------------------------------------
+7. Cheque as propriedades do projeto e verifique se o Java Compiler está como 1.8;
+ - Clique com o botão direito do mouse no projeto
+ - Vá em properties,
+ - Vá em Java Compiler e verifique se está 1.8
+ - Caso contrario, set a versão para 1.8;
+
+//Check the project's properties and verify Java Compiler is set to 1.8
+----------------------------------------------------------------------------------------------------
+8.Lembre-se o seu service tem que ser baseado no arquivo .proto que vc criou;
+----------------------------------------------------------------------------------------------------
