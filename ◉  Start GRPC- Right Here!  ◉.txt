@@ -60,6 +60,6 @@ não se esqueça de utilizar o "npm i" para que as dependências sejam baixadas.
 	- npm run dev-server
 	- npm run dev-client
 
-  >> Mude as portas que ficam no client e server para que possam se comunicar entre si
-  >> Atual: JAVA - Client (3335) & Server (3335) | Node - Client (3334) & Server (3334)
-  >> Mudança: JAVA - Client (3334) & Server (3335) | Node - Client (3335) & Server (3334)
+  >> Mude as portas que ficam no client e server para que possam se comunicar entre si:
+      => Atual: JAVA - Client (3335) & Server (3335) | Node - Client (3334) & Server (3334)
+      => Mudança: JAVA - Client (3334) & Server (3335) | Node - Client (3335) & Server (3334)
