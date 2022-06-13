@@ -46,7 +46,7 @@ não se esqueça de utilizar o "npm i" para que as dependências sejam baixadas.
 
   >> Vá na pasta Template e realize os procedimentos abaixo tanto para JAVA quanto para NODE.
        .Sequência:
-        - Utilize o ModelTemplate.txt para ter como base a criação do gRPC service;
+        - Utilize o ModelTemplate.txt para ter como base a criação do model;
         - Utilize o ServiceTemplate.txt para ter como base a criação do gRPC service;
 	- Utilize o ServerTemplate.txt para ter como base a criação do gRPC server;
         - Utilize o ClientTemplate.txt para ter como base a criação do gRPC client;
