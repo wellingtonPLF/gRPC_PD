@@ -17,7 +17,7 @@ não se esqueça de utilizar o "npm i" para que as dependências sejam baixadas.
    que se encontra na pasta Templates (Utilize tanto no JAVA quanto no NODE);
 
    -------------------------------------------------------------------------------------------------------------------------
-   Exeception:
+   Exception:
       .Em no .proto do JAVA adicione:
            option java_multiple_files = true;
      	   option java_package = "<groupId>.protos";		//Coloque o seu groupID;
