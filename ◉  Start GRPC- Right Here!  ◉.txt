@@ -53,7 +53,7 @@ não se esqueça de utilizar o "npm i" para que as dependências sejam baixadas.
 
   >> Após a utilização dos templates, na aplicação JAVA faça a importação das dependências;
 
-5.Por fim, rode tanto o server quanto o client;
+5. Por fim, rode tanto o server quanto o client;
 
   >> JAVA => No eclipse use o PLAY
   >> NODE => No node use a CLI
