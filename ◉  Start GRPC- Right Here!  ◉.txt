@@ -3,7 +3,7 @@
 #####################################
 
 ************************************************
->> Lembre-se: Nomenclatura deve ser seguida! <<
+>> Lembre-se: A nomenclatura deve ser seguida! <<
 ************************************************
 
 1. Se for utilizar os exemplos práticos, antes de utilizar o gRPC_Node, 
