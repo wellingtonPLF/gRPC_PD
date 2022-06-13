@@ -45,7 +45,7 @@ não se esqueça de utilizar o "npm i" para que as dependências sejam baixadas.
 4. Após executar os scripts com base nos .proto criados:
 
   >> Vá na pasta Template e realize os procedimentos abaixo tanto para JAVA quanto para NODE.
-       .Sequencia:
+       .Sequência:
         - Utilize o ModelTemplate.txt para ter como base a criação do gRPC service;
         - Utilize o ServiceTemplate.txt para ter como base a criação do gRPC service;
 	- Utilize o ServerTemplate.txt para ter como base a criação do gRPC server;
